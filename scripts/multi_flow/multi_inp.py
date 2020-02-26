@@ -1,13 +1,10 @@
 #!/usr/bin/env python3
 
 #
-# Input to be used in the writer (3 spheres of uranium, void, and water)
+# Input to be used in the writer (5 spheres of uranium, void, and water)
 # Written by Luke Seifert
 # 8/23/2019
 #
-# Temporary Changes:
-# Water is hydrogen
-# Empty shell no longer has helium
 
 
 import math
@@ -22,11 +19,13 @@ def deck(setting = 0):
 #4, 1, 3, 1.2, 0.5
 
 
-    v1 = 4 # fuel
-    v2 = v1 + 1 # empty
-    v3 = v2 + 3 # water
-    v4 = v3 + 1.2 # empty
-    v5 = v4 + 0.5 # water
+    v1 = 5 # fuel
+    v2 = v1 + 1 # empty inner
+    v3 = v2 + 3 # water inner
+    v4 = v3 + 1.2 # empty outer
+    v5 = v4 + 0.5 # water outer
+    mflow  = 0.03 # Inner input flow
+    mflow2 = 0.015 # Outer input flow
     tenth_sec = 1 / (24 * 3600 * 10)
     one_sec = 1 / (24 * 3600)
     five_sec = 5 / (24 * 3600)
@@ -41,8 +40,6 @@ def deck(setting = 0):
     r3 = (v3 * 3/4 * math.pi) ** (1/3)
     r4 = (v4 * 3/4 * math.pi) ** (1/3)
     r5 = (v5 * 3/4 * math.pi) ** (1/3)
-    mflow  = 0.03
-    mflow2 = 0.015
 
     serpent_inp = '''set title "test2"
 

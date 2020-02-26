@@ -5,9 +5,6 @@
 # Written by Luke Seifert
 # 8/23/2019
 #
-# Temporary Changes:
-# Water is hydrogen
-# Empty shell no longer has helium
 
 
 import math
@@ -19,14 +16,15 @@ def deck(setting = 0):
     Output: String of deck for Serpent
     '''
 
-# 2 3 9
+    v2 = 3 # Empty Shell (Destination) Volume
+    v3 = 2 # Water Shell (Source) Volume
+    mflow = 0.03 # Input Flow
+   # Time steps can be manually changed at the bottom of the function
 
-    v1 = 5
-    v2 = 3
-    v3 = 2
+    v1 = 5 # Fuel Volume
     dv1 = 0 + v1 # fuel
-    dv2 = dv1 + v2 # empty 3
-    dv3 = dv2 + v3 # water 2
+    dv2 = dv1 + v2 # empty
+    dv3 = dv2 + v3 # water
     tenth_sec = 1 / (24 * 3600 * 10)
     one_sec = 1 / (24 * 3600)
     five_sec = 5 / (24 * 3600)
@@ -39,7 +37,6 @@ def deck(setting = 0):
     r1 = (dv1 * 3/4 * math.pi) ** (1/3)
     r2 = (dv2 * 3/4 * math.pi) ** (1/3)
     r3 = (dv3 * 3/4 * math.pi) ** (1/3)
-    mflow = 0.03
 
     serpent_inp = '''set title "test2"
 
