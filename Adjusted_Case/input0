@@ -20,7 +20,7 @@ cell 204   0   outside   103
 %__________material definitions_________________________________________________
 % fuel sphere
 mat fuel -18.74
-burn 1
+%burn 1
 vol 5
 rgb 180 220 0
 %  elements   fraction
@@ -29,13 +29,13 @@ rgb 180 220 0
 
 % empty sphere
 % 1
-mat empty -1
-burn 1
+mat empty -0
+ burn 1
 vol 3
 rgb 110 110 110
 % elements   fraction
-   1001.03c     0.0
-   2004.03c     1.0
+%   1001.03c     0.0
+%   2004.03c     1.0
 
 % water sphere
 % 1.7
@@ -66,7 +66,7 @@ set pcc    0 % predictor-corrector off for depletion
 %__________flow definition______________________________________________________
 % water sphere flowing water to empty sphere
 mflow w_flow
- all 0.03
+ all 0.1
 
 % rc <from_mat><to_mat><mflow><setting>
 rep flowprocess
@@ -77,7 +77,7 @@ rep flowprocess
 set inventory
 % U
  H
-% O
+ O
 % He
 
 set printm1
