@@ -1,3 +1,4 @@
+https://msr.ne.utk.edu/Reprocessing_in_Serpent.pdf
 # Serpent_Rep_Flow
 
 This repository contains the example cases and scripts used in an associated paper. The citation from the paper can be found in the link below.
